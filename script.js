@@ -9,10 +9,18 @@ time = prompt("Введите дату в формате DD-MM-YYYY", "");
 let appData = {
         budget: money,
         timeData: time,
-        expences: "",
-        optionalExpences: "",
+        expences: {},
+        optionalExpences: {},
         income: "",
         savings: false
-    }
+    };
 
-console.log(appData.budget + " " + appData.timeData);
+let a = prompt("1. Введите обязательную статью расходов в этом месяце", ""),
+    b = prompt("1. Во сколько обойдется?", ""),
+    c = prompt("2. Введите обязательную статью расходов в этом месяце", ""),
+    d = prompt("2. Во сколько обойдется?", "");
+
+appData.expences[a] = b;
+appData.expences[c] = d;
+
+console.log(appData.expences);
