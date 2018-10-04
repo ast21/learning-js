@@ -24,3 +24,5 @@ appData.expences[a] = b;
 appData.expences[c] = d;
 
 console.log(appData.expences);
+
+alert("бюджет на 1 день: " + money / 30 + " рублей");
