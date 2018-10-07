@@ -18,11 +18,11 @@ let appData = {
 for (let i = 1; i <= 2; i++) {
     let a = prompt(i + ". Введите обязат. статью расходов в этом месяце", ""),
         b = prompt(i + ". Во сколько обойдется?", "");
-
-    if (typeof(a) === "string" && typeof(a) != null && typeof(b) != null &&
+    
+        if (typeof(a) === "string" && a != null && b != null &&
         a != "" && b != "" && a.length <= 50) {
         console.log("done");
-    appData.expences[a] = b;
+        appData.expences[a] = b;
     }
 }
 
@@ -32,7 +32,7 @@ for (let i = 1; i <= 2; i++) {
 //         let a = prompt(i + ". Введите обязат. статью расходов в этом месяце", ""),
 //             b = prompt(i + ". Во сколько обойдется?", "");
 
-//         if (typeof(a) === "string" && typeof(a) != null && typeof(b) != null &&
+//         if (typeof(a) === "string" && a != null && b != null &&
 //             a != "" && b != "" && a.length <= 50) {
 //             console.log("done");
 //         appData.expences[a] = b;
@@ -46,7 +46,7 @@ for (let i = 1; i <= 2; i++) {
 //         let a = prompt(i + ". Введите обязат. статью расходов в этом месяце", ""),
 //             b = prompt(i + ". Во сколько обойдется?", "");
 
-//         if (typeof(a) === "string" && typeof(a) != null && typeof(b) != null &&
+//         if (typeof(a) === "string" && a != null && b != null &&
 //             a != "" && b != "" && a.length <= 50) {
 //             console.log("done");
 //         appData.expences[a] = b;
