@@ -7,7 +7,7 @@ console.log(str);
 // 2
 let symb = "-";
 for (let i = 0; i < str.length; i++) {
-    let foundPos = str.indexOf("symb", i);
+    let foundPos = str.indexOf(symb, i);
     if (foundPos != -1) {
         i = foundPos;
         str = str.substring(0, foundPos) + " " + str.substring(foundPos + 1);
