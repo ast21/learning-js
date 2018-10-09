@@ -7,6 +7,8 @@
 - [Lesson 2 extended](https://breakhack.github.io/learning-js/Lesson2e/)
 - [Lesson 3](https://breakhack.github.io/learning-js/Lesson3/)
 - [Lesson 3 extended](https://breakhack.github.io/learning-js/Lesson3e/)
+- [Lesson 4](https://breakhack.github.io/learning-js/Lesson4/)
+- [Lesson 4 extended](https://breakhack.github.io/learning-js/Lesson4e/)
 
 ### Codes on GitHub
 - [Lesson 1](https://github.com/breakhack/learning-js/tree/master/Lesson1)
@@ -15,3 +17,5 @@
 - [Lesson 2 extended](https://github.com/breakhack/learning-js/tree/master/Lesson2e)
 - [Lesson 3](https://github.com/breakhack/learning-js/tree/master/Lesson3)
 - [Lesson 3 extended](https://github.com/breakhack/learning-js/tree/master/Lesson3e)
+- [Lesson 4](https://github.com/breakhack/learning-js/tree/master/Lesson4)
+- [Lesson 4 extended](https://github.com/breakhack/learning-js/tree/master/Lesson4e)
