@@ -99,7 +99,7 @@ let appData = {
 // 3 (надо ли выводить значения???)
 let ourProgram = "Наша программа включает в себя данные: ";
 for (let key in appData) {
-    ourProgram += "\n" + (key) + ": " + appData[key];
+    ourProgram += "\n" + (key) + ": " + typeof(appData[key]);
 }
 console.log(ourProgram);
 
