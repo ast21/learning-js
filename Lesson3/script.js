@@ -1,8 +1,17 @@
 "use strict";
 
 let money = "",
-    time,
-    appData = {
+    time;
+
+function start() {
+    while (isNaN(money) || money == "" || money == null) {
+        money = +prompt("Ваш бюджет на месяц?", "");
+    }
+    time = prompt("Введите дату в формате DD-MM-YYYY", "");
+}
+start();
+
+let appData = {
         budget: money,
         timeData: time,
         expences: {},
@@ -11,12 +20,6 @@ let money = "",
         savings: true
     };
 
-function start() {
-    while (isNaN(money) || money == "" || money == null) {
-        money = +prompt("Ваш бюджет на месяц?", "");
-    }
-    time = prompt("Введите дату в формате DD-MM-YYYY", "");
-}
 
 function chooseExpenses() {
     for (let i = 1; i <= 2; i++) {
@@ -73,7 +76,6 @@ function chooseOptExpenses() {
     }
 }
 
-start();
 chooseExpenses();
 detectDayBudget();
 detectLevel();
