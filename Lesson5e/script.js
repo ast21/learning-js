@@ -54,10 +54,23 @@ function dayToString(date) {
  * Напишите функцию, которая выводит на страницу 
  * разницу между двумя датами в количестве дней
  */
-console.log( diffDate(new Date(), new Date(2018, 9, 1)) );
+let dateValues = document.querySelectorAll('.date-value'),
+    result = document.querySelector('#result'),
+    date1,
+    date2,
+    diff;
 
-function diffDate(date1, date2) {
-    let diff = date1 - date2; // timestamp
+dateValues[0].addEventListener('input', () => {
+    diffDate();
+});
+dateValues[1].addEventListener('input', () => {
+    diffDate();
+});
+
+function diffDate() {
+    date1 = new Date(dateValues[0].value);
+    date2 = new Date(dateValues[1].value);
+    diff = new Date(date1) - new Date(date2);
     diff = Math.floor(diff / 24 / 60 / 60 / 1000);
-    return (diff >= 0) ? diff: diff * -1;
+    result.value = (diff >= 0) ? diff: diff * -1;
 }
