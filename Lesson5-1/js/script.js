@@ -2,7 +2,7 @@
 let menu = document.querySelector('.menu'),
     menuItem = document.querySelectorAll('.menu-item'),
     newMenuItem = document.createElement('li');
-
+console.log(menuItem);
 menuItem[1].innerHTML = 'Второй пункт';
 menuItem[2].innerHTML = 'Третий пункт';
 
