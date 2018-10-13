@@ -4,15 +4,9 @@ let start = document.getElementById('start');
 
 // 2.2
 let allDivs = document.querySelectorAll('div'),
-    allInputs = document.querySelectorAll('input'),
     values = [];
 // цикл рухнет когда на странице появится элемент с двумя классами
 allDivs.forEach(function (item){
-    if (item.classList.toString().indexOf('-value') > -1) {
-        values.push(item);
-    }
-});
-allInputs.forEach(function (item){
     if (item.classList.toString().indexOf('-value') > -1) {
         values.push(item);
     }
