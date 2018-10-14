@@ -25,7 +25,7 @@ let approveIncomes = document.getElementsByTagName('button')[0],
 console.log([approveIncomes, approveExpences, calculate]);
 
 // 2.5
-let optionalExpenses = document.querySelector('.optionalexpenses-item');
+let optionalExpenses = document.querySelectorAll('.optionalexpenses-item');
 console.log(optionalExpenses);
 
 // 2.6
