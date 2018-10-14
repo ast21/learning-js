@@ -3,7 +3,8 @@
  * Выведите на страницу текущую дату и время 
  * в формате '09:59:59 30.05.2018'
  */ 
-let date = new Date(),
+let date = new Date(1970, 0, 1, 10, 1, 1),
+    dateFormat,
     optionsTime = {
         hour: 'numeric',
         minute: 'numeric',
@@ -15,8 +16,13 @@ let date = new Date(),
         day: 'numeric'
     };
 
-console.log( date.toLocaleString("ru", optionsTime) + 
-    " " + date.toLocaleString("ru", optionsDate) );
+dateFormat = date.toLocaleString("ru", optionsTime) + 
+    " " + date.toLocaleString("ru", optionsDate);
+
+if (dateFormat[1] == ":") {
+    dateFormat = "0" + dateFormat;
+}
+console.log(dateFormat);
 
 /**
  * 2
@@ -68,9 +74,18 @@ dateValues[1].addEventListener('input', () => {
 });
 
 function diffDate() {
-    date1 = new Date(dateValues[0].value);
-    date2 = new Date(dateValues[1].value);
-    diff = new Date(date1) - new Date(date2);
-    diff = Math.floor(diff / 24 / 60 / 60 / 1000);
-    result.value = (diff >= 0) ? diff: diff * -1;
+    date1 = stringToDate(dateValues[0].value);
+    date2 = stringToDate(dateValues[1].value);
+    if (date1 && date2) { 
+        diff = new Date(date1) - new Date(date2);
+        diff = Math.floor(diff / 24 / 60 / 60 / 1000);
+        result.value = (diff >= 0) ? diff: diff * -1;
+    }
+}
+
+function stringToDate(dateAsString) {
+    let mass = dateAsString.split(".");
+    if (mass.length == 3) {
+        return new Date(mass[2], mass[1] - 1, mass[0]);
+    }
 }
