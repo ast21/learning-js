@@ -3,7 +3,7 @@
  * Выведите на страницу текущую дату и время 
  * в формате '09:59:59 30.05.2018'
  */ 
-let date = new Date(1970, 0, 1, 10, 1, 1),
+let date = new Date(1970, 0, 1, 1, 1, 1),
     dateFormat,
     optionsTime = {
         hour: 'numeric',
