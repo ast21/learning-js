@@ -12,3 +12,5 @@
 - [Lesson 5.1](https://breakhack.github.io/learning-js/Lesson5-1/)
 - [Lesson 5.2](https://breakhack.github.io/learning-js/Lesson5-2/)
 - [Lesson 5 extended](https://breakhack.github.io/learning-js/Lesson5e/)
+- [Lesson 6](https://breakhack.github.io/learning-js/Lesson6/)
+- [Lesson 6 extended](https://breakhack.github.io/learning-js/Lesson6e/)
