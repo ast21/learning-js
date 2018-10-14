@@ -36,6 +36,16 @@ start.addEventListener('click', function () {
     year.value = new Date( Date.parse(time) ).getFullYear();
     month.value = new Date( Date.parse(time) ).getMonth() + 1;
     day.value = new Date( Date.parse(time) ).getDate();
+
+        if (+budgetValue.innerText > 0) {
+            calculateBtn.style.background = enableBtnColor;
+            calculateBtn.disabled = false;
+        } else {
+            calculateBtn.style.background = disableBtnColor;
+            calculateBtn.disabled = true;
+            daybudgetValue.innerText = "";
+            levelValue.innerText = "";
+        }
 });
 
 approveExpensesBtn.addEventListener('click', function () {
@@ -67,14 +77,14 @@ approveOptExpensesBtn.addEventListener('click', function () {
 });
 
 calculateBtn.addEventListener('click', function () {
-    appData.moneyPerDay = (appData.budget / 30).toFixed(1);
+    appData.moneyPerDay = ((appData.budget - +expensesValue.innerText) / 30).toFixed();
     daybudgetValue.innerText = appData.moneyPerDay;
 
     if (appData.moneyPerDay < 100) {
         levelValue.innerText = "Минимальный уровень достатка";
-    } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+    } else if (appData.moneyPerDay >= 100 && appData.moneyPerDay < 2000) {
         levelValue.innerText = "Средний уровень достатка";
-    } else if (appData.moneyPerDay > 2000) {
+    } else if (appData.moneyPerDay >= 2000) {
         levelValue.innerText = "Высокий уровень достатка";
     } else {
         levelValue.innerText = "Произошла ошибка";
@@ -124,3 +134,40 @@ let appData = {
         income: [],
         savings: false,
     };
+
+let enableBtnColor = "linear-gradient(#ffbd75, #ff964b)",
+    disableBtnColor = "linear-gradient(#d0cdcb, #867c75)";
+
+approveExpensesBtn.disabled = true;
+approveOptExpensesBtn.disabled = true;
+calculateBtn.disabled = true;
+
+approveExpensesBtn.style.background = disableBtnColor;
+approveOptExpensesBtn.style.background = disableBtnColor;
+calculateBtn.style.background = disableBtnColor;
+
+expenses.forEach(function (item) {
+    item.addEventListener('input', function () {
+        if ( (expenses[0].value && expenses[1].value) || (expenses[3].value && expenses[4]).value ) {
+            approveExpensesBtn.style.background = enableBtnColor;
+            approveExpensesBtn.disabled = false;
+        } else {
+            expensesValue.innerText = "";
+            approveExpensesBtn.style.background = disableBtnColor;
+            approveExpensesBtn.disabled = true;
+        }
+    });
+});
+
+optExpenses.forEach(function (item) {
+    item.addEventListener('input', function () {
+        if ( optExpenses[0].value || optExpenses[1].value || optExpenses[2].value ) {
+            approveOptExpensesBtn.style.background = enableBtnColor;
+            approveOptExpensesBtn.disabled = false;
+        } else {
+            optExpensesValue.innerText = "";
+            approveOptExpensesBtn.style.background = disableBtnColor;
+            approveOptExpensesBtn.disabled = true;
+        }
+    });
+});
