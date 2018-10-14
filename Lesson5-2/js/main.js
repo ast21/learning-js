@@ -25,15 +25,15 @@ let approveIncomes = document.getElementsByTagName('button')[0],
 console.log([approveIncomes, approveExpences, calculate]);
 
 // 2.5
-let optionalExpenses = document.querySelectorAll('.optionalexpenses-item');
+let optionalExpenses = document.querySelector('.optionalexpenses-item');
 console.log(optionalExpenses);
 
 // 2.6
-let income = document.querySelectorAll('#income'), 
-    savings = document.querySelectorAll('#savings'),
-    sum = document.querySelectorAll('#sum'),
-    percent = document.querySelectorAll('#percent'),
-    year = document.querySelectorAll('.year-value'),
-    month = document.querySelectorAll('.month-value'),
-    day = document.querySelectorAll('.day-value');
+let income = document.querySelector('#income'), 
+    savings = document.querySelector('#savings'),
+    sum = document.querySelector('#sum'),
+    percent = document.querySelector('#percent'),
+    year = document.querySelector('.year-value'),
+    month = document.querySelector('.month-value'),
+    day = document.querySelector('.day-value');
 console.log([income, savings, sum, percent, year, month, day]);
