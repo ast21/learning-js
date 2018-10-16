@@ -1,8 +1,10 @@
-let rippleGlow = document.querySelector('#rippleglow');
-let way = 'right',
-    x = rippleGlow.style.left = 0,
-    y = rippleGlow.style.top = 0,
-    speed = 5;
+let rippleGlow = document.querySelector('#rippleglow'),
+    way = 'right',
+    speed = 5,
+    x = 0, y = 0;
+
+rippleGlow.style.left = 20;
+rippleGlow.style.top = 20;
 
 function step() {
     // console.log("x = " + x + ", y = " + y);
@@ -36,14 +38,6 @@ function step() {
                 way = 'right';
             }
             break;
-    }
-}
-console.log(react(2).toFixed() + 'px');
-function react(num) {
-    if (num > 2) {
-        return num * num / (num - 1);
-    } else {
-        return num;
     }
 }
 
