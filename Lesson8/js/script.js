@@ -45,19 +45,19 @@ window.addEventListener('DOMContentLoaded', function() {
             minutes = twoDigits(Math.floor((t/1000/60) % 60)),
             hours = twoDigits(Math.floor((t/1000/60/60)));
 
-        return {
-            'total' : t,
-            'hours' : hours,
-            'minutes' : minutes,
-            'seconds' : seconds
-        };
-
         function twoDigits(number) {
             if (number < 10 && number >= 0) {
                 number = "0" + number;
             }
             return number;
         }
+
+        return {
+            'total' : t,
+            'hours' : hours,
+            'minutes' : minutes,
+            'seconds' : seconds
+        };
 
     }
 
