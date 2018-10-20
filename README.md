@@ -17,3 +17,4 @@
 - [Lesson 7 "tabs" repo](https://breakhack.github.io/tabs/)
 - [Lesson 7](https://breakhack.github.io/learning-js/Lesson7/)
 - [Lesson 7 extended](https://breakhack.github.io/learning-js/Lesson7e/)
+- [Lesson 8](https://breakhack.github.io/learning-js/Lesson8/)
