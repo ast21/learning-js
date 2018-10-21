@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Options {
+            constructor(height, width, bg, fontSize, textAlign) {
+                this.height = height, 
+                this.width = width, 
+                this.bg = bg, 
+                this.fontSize = fontSize, 
+                this.textAlign = textAlign
+            }
+            superMethod(text) {
+                let div = document.createElement('div');
+                div.innerText = `${text}`;
+                div.classList.add('div');
+
+                div.style.cssText = `
+                    height: ${this.height};
+                    width: ${this.width};
+                    background: ${this.bg};
+                    font-size: ${this.fontSize};
+                    text-align: ${this.textAlign};
+
+                    /* дополнительно */
+                    margin: 0 auto;
+                    line-height: ${this.height};
+                `;
+                document.body.appendChild(div);
+            }
+        }
+
+        let createDiv = new Options('200px', '400px', '#fc0', '36px', 'center');
+        createDiv.superMethod("Я уникальный <div>");
+    </script>
+</body>
+</html>
