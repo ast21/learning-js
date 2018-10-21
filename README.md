@@ -19,3 +19,4 @@
 - [Lesson 7 extended](https://breakhack.github.io/learning-js/Lesson7e/)
 - [Lesson 8](https://breakhack.github.io/learning-js/Lesson8/)
 - [Lesson 9](https://breakhack.github.io/learning-js/Lesson9/)
+- [Lesson 10](https://breakhack.github.io/learning-js/Lesson10/)
