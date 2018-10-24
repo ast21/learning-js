@@ -20,3 +20,4 @@
 - [Lesson 08](https://breakhack.github.io/learning-js/Lesson08/)
 - [Lesson 09](https://breakhack.github.io/learning-js/Lesson09/)
 - [Lesson 10](https://breakhack.github.io/learning-js/Lesson10/)
+- [Lesson 11](https://breakhack.github.io/learning-js/Lesson11/)
