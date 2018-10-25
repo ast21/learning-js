@@ -125,10 +125,30 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             form[i].appendChild(statusMessage);
 
-            let request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
 
-            request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+            let postData = (json) => {
+
+                let promise = new Promise((resolve, reject) => {
+
+                    let request = new XMLHttpRequest();
+                    request.open('POST', 'server.php');
+                    request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+                    request.onreadystatechange = function () {
+                        console.log(`${request.readyState} | ${request.status}`);
+                        if (request.readyState < 4) {
+                            statusMessage.innerHTML = message.loading;
+                        } else if (request.readyState == 4 && request.status == 200) {
+                            resolve();
+                        } else {
+                            reject();
+                        }
+                    };
+
+                    request.send(json);
+                });
+
+                return promise;
+            };
 
             let formData = new FormData(form[i]);
             let obj = {};
@@ -136,17 +156,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 obj[key] = value;
             });
             let json = JSON.stringify(obj);
-            request.send(json);
 
-            request.addEventListener('readystatechange', () => {
-                if (request.readyState < 4) {
-                    statusMessage.innerHTML = message.loading;
-                } else if (request.readyState == 4 && request.status == 200) {
-                    statusMessage.innerHTML = message.success;
-                } else {
-                    statusMessage.innerHTML = message.failure;
-                }
-            });
+            postData(json)
+                .then(() => statusMessage.innerHTML = message.success)
+                .catch(() => statusMessage.innerHTML = message.failure);
 
             for (let j = 0; j < input.length; j++) {
                 input[j].value = '';
