@@ -229,7 +229,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    {   //calc
+    {   // calc
 
         /**
          * testing addEventListenerMulti
