@@ -231,6 +231,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     {   //calc
 
+        /**
+         * testing addEventListenerMulti
+         * @param {*} elem 
+         * @param {*} events 
+         * @param {*} func 
+         */
         let addEventListenerMulti = (elem, events, func) => {
             events.split(' ').forEach(e => elem.addEventListener(e, func, false));
         }
@@ -244,34 +250,32 @@ window.addEventListener('DOMContentLoaded', () => {
             placeVal = +place.options[place.selectedIndex].value;
 
         let totalVal = () => {
-            return 700 * personsVal * restDaysVal * placeVal;
+            if (persons.value != '' && restDays.value != '') {
+                return 700 * personsVal * restDaysVal * placeVal;
+            } else {
+                return 0;
+            }
         };
 
-        addEventListenerMulti(persons, 'input', () => {
+        let verifyInputNumbers = (elem) => {
+            elem.value = elem.value.replace(/[^\d]/g, '');
+        };
+
+        persons.addEventListener('input', () => {
+            verifyInputNumbers(persons);
             personsVal = +persons.value;
-            if (persons.value != '' && restDays.value != '') {
-                total.innerText = totalVal();
-            } else {
-                total.innerText = 0;
-            }
+            total.innerText = totalVal();
         });
 
-        addEventListenerMulti(restDays, 'input', () => {
+        restDays.addEventListener('input', () => {
+            verifyInputNumbers(restDays);
             restDaysVal = +restDays.value;
-            if (persons.value != '' && restDays.value != '') {
-                total.innerText = totalVal();
-            } else {
-                total.innerText = 0;
-            }
+            total.innerText = totalVal();
         });
 
         addEventListenerMulti(place, 'change click', () => {
             placeVal = +place.options[place.selectedIndex].value;
-            if (persons.value != '' && restDays.value != '') {
-                total.innerText = totalVal();
-            } else {
-
-            }
+            total.innerText = totalVal();
         });
 
     }

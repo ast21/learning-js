@@ -44,6 +44,28 @@
     box-shadow: 0 0 60px #c78030;
   }
 }
+.more-splash-text {
+  -webkit-animation-name: splash-text;
+          animation-name: splash-text;
+  -webkit-animation-duration: 1.7s;
+          animation-duration: 1.7s;
+}
+@-webkit-keyframes splash-text {
+  from {
+    text-shadow: 0 0 10px #c78030;
+  }
+  to {
+    text-shadow: 0 0 60px #c78030;
+  }
+}
+@keyframes splash-text {
+  from {
+    text-shadow: 0 0 10px #c78030;
+  }
+  to {
+    text-shadow: 0 0 60px #c78030;
+  }
+}
 
 * {
   box-sizing: border-box;
