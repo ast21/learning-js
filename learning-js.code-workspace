@@ -4,5 +4,11 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"workbench.colorCustomizations": {
+			"statusBar.background": "#303030",
+			"statusBar.noFolderBackground": "#222225",
+			"statusBar.debuggingBackground": "#511f1f"
+		}
+	}
 }
