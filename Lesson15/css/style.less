@@ -17,6 +17,7 @@
   to {opacity: 1}
 }
 
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -279,6 +280,21 @@ header {
 				height: 100%;
 				&:hover {
 					background-color: rgba(0,0,0,.4);
+					.arrow-left{
+						opacity:1;
+					}
+				}
+				.arrow-left {
+					width: 30px;
+					height: 30px;
+					background: url(../icons/left-arrow.svg) center no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%);
+					opacity: .4;
+					transition: 1s;
 				}
 			}
 			.next {
@@ -292,6 +308,21 @@ header {
 				right: 10%;
 				&:hover {
 					background-color: rgba(0,0,0,.4);
+					.arrow-right{
+						opacity:1;
+					}
+				}
+				.arrow-right {
+					width: 30px;
+					height: 30px;
+					background: url(../icons/right-arrow.svg) center no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%);
+					opacity: .4;
+					transition: 1s;
 				}
 			}
 		}
@@ -353,6 +384,8 @@ header {
 				border: none;
 				border-bottom: 1px solid rgba(199,126,48,.6);
 				font-size: 46px;
+				text-align: center;
+				
 			}
 			select {
 				width: 230px;
@@ -373,6 +406,18 @@ header {
 				font-size: 46px;
 			}
 		}
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    appearance: none;
+		    margin: 0;
+		}
+		/* Для Firefox */
+		input[type=number]{
+		  -moz-appearance: textfield;
+		}
+
 	}
 	.more {
 		display: block;

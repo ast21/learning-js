@@ -44,29 +44,6 @@
     box-shadow: 0 0 60px #c78030;
   }
 }
-.more-splash-text {
-  -webkit-animation-name: splash-text;
-          animation-name: splash-text;
-  -webkit-animation-duration: 1.7s;
-          animation-duration: 1.7s;
-}
-@-webkit-keyframes splash-text {
-  from {
-    text-shadow: 0 0 10px #c78030;
-  }
-  to {
-    text-shadow: 0 0 60px #c78030;
-  }
-}
-@keyframes splash-text {
-  from {
-    text-shadow: 0 0 10px #c78030;
-  }
-  to {
-    text-shadow: 0 0 60px #c78030;
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -358,6 +335,24 @@ header ul li:before {
 .content .slider .wrap .prev:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
+.content .slider .wrap .prev:hover .arrow-left {
+  opacity: 1;
+}
+.content .slider .wrap .prev .arrow-left {
+  width: 30px;
+  height: 30px;
+  background: url(../icons/left-arrow.svg) center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  opacity: .4;
+  -webkit-transition: 1s;
+          transition: 1s;
+}
 .content .slider .wrap .next {
   position: absolute;
   cursor: pointer;
@@ -371,6 +366,24 @@ header ul li:before {
 }
 .content .slider .wrap .next:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+.content .slider .wrap .next:hover .arrow-right {
+  opacity: 1;
+}
+.content .slider .wrap .next .arrow-right {
+  width: 30px;
+  height: 30px;
+  background: url(../icons/right-arrow.svg) center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  opacity: .4;
+  -webkit-transition: 1s;
+          transition: 1s;
 }
 .content .slider-dots {
   width: 90%;
@@ -402,7 +415,8 @@ header ul li:before {
   width: 18px;
 }
 .content .counter {
-  margin-top: 150px;
+  margin-top: 150px
+  /* Для Firefox */
 }
 .content .counter-title {
   font-size: 32px;
@@ -446,6 +460,7 @@ header ul li:before {
   border: none;
   border-bottom: 1px solid rgba(199, 126, 48, 0.6);
   font-size: 46px;
+  text-align: center;
 }
 .content .counter-block select {
   width: 230px;
@@ -464,6 +479,16 @@ header ul li:before {
 }
 .content .counter-total span {
   font-size: 46px;
+}
+.content .counter input[type=number]::-webkit-inner-spin-button,
+.content .counter input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.content .counter input[type=number] {
+  -moz-appearance: textfield;
 }
 .content .more {
   display: block;
