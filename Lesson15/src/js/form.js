@@ -53,7 +53,8 @@ export default function form() {
 
             postData(json)
                 .then(() => statusMessage.innerHTML = message.success)
-                .catch(() => statusMessage.innerHTML = message.failure);
+                .catch(() => statusMessage.innerHTML = message.failure)
+                .then(() => setTimeout(() => statusMessage.innerHTML = '', 2000));
 
             for (let j = 0; j < input.length; j++) {
                 input[j].value = '';
