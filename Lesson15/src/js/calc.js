@@ -20,7 +20,7 @@ export default function calc() {
 
     let totalVal = () => {
         if (persons.value != '' && restDays.value != '') {
-            return 700 * personsVal * restDaysVal * placeVal;
+            return 4000 * (personsVal + restDaysVal) * placeVal;
         } else {
             return 0;
         }
